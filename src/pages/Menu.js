@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import menuData from '../data/menuData';
+import useFavorites from '../hooks/useFavorites';
 
 const categories = ['appetizers', 'pasta', 'mains', 'desserts', 'drinks'];
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const filteredItems = activeCategory === 'all'
     ? menuData
@@ -55,7 +57,16 @@ function Menu() {
                         <h4>{item.name}</h4>
                         <p>{item.description}</p>
                       </div>
-                      <span className="menu-item-price">{item.price}</span>
+                      <div className="menu-item-right">
+                        <span className="menu-item-price">{item.price}</span>
+                        <button
+                          className="heart-btn"
+                          onClick={() => toggleFavorite(item.id)}
+                          aria-label={isFavorite(item.id) ? 'Remove from favorites' : 'Add to favorites'}
+                        >
+                          {isFavorite(item.id) ? '♥' : '♡'}
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
