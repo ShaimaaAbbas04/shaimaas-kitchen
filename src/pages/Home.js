@@ -22,7 +22,7 @@ function Home() {
       <section className="featured">
         <div className="container">
           <h2 className="section-title">Featured Dishes</h2>
-          <div className="row">
+          <div className="row g-4">
             <div className="col-md-4">
               <div className="dish-card">
                 <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80" alt="Spaghetti carbonara" />
