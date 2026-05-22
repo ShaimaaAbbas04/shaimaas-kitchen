@@ -1,12 +1,22 @@
 import { NavLink } from 'react-router-dom';
+import useTheme from '../hooks/useTheme';
 
 function Header() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className="site-header">
       <nav className="navbar navbar-expand-md container">
         <NavLink to="/" className="logo navbar-brand">
           Shaimaa's Kitchen
         </NavLink>
+        <button
+          className="theme-toggle order-md-last ms-2"
+          onClick={toggleTheme}
+          aria-label="Toggle dark mode"
+        >
+          {theme === 'dark' ? '☼' : '☾'}
+        </button>
         <button
           className="navbar-toggler"
           type="button"
