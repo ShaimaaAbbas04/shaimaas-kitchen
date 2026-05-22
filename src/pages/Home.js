@@ -19,6 +19,8 @@ function Home() {
         </div>
       </section>
 
+      <div className="section-divider">&#8231; &#8231; &#8231;</div>
+
       <section className="featured">
         <div className="container">
           <h2 className="section-title">Featured Dishes</h2>

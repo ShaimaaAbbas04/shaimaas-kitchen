@@ -129,23 +129,25 @@ function Reservations() {
 
           {favoriteDishes.length > 0 && (
             <div className="favorites-callout mb-5">
-              <h3>Your Favorite Dishes</h3>
-              <ul className="favorites-list">
+              <p className="favorites-callout-heading">&#9829; Your Favorites</p>
+              <div className="fav-badges">
                 {favoriteDishes.map(dish => (
-                  <li key={dish.id}>{dish.name} <span className="fav-price">{dish.price}</span></li>
+                  <span key={dish.id} className="fav-badge">{dish.name}</span>
                 ))}
-              </ul>
-              <button className="btn btn-sm-outline" onClick={prefillFavorites}>
+              </div>
+              <button className="btn-sm-outline" onClick={prefillFavorites}>
                 Add these to my special requests
               </button>
             </div>
           )}
 
-          <div className="form-section">
+          <div className="form-card form-section">
             <h2>Reserve a Table</h2>
 
             {successMessage && (
-              <div className="success-message">{successMessage}</div>
+              <div className="alert-success-custom" role="alert">
+                {successMessage}
+              </div>
             )}
 
             <form noValidate onSubmit={handleSubmit}>
@@ -233,7 +235,7 @@ function Reservations() {
             </form>
           </div>
 
-          <div className="reservations-list mt-5">
+          <div className="reservations-list">
             <h2>My Reservations</h2>
             {reservations.length === 0 && (
               <p className="no-reservations">You have no reservations yet.</p>

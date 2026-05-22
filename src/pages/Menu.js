@@ -26,7 +26,7 @@ function Menu() {
 
       <section>
         <div className="container">
-          <div className="filter-buttons">
+          <div className="filter-buttons" role="group" aria-label="Filter by category">
             <button
               className={'filter-btn' + (activeCategory === 'all' ? ' active' : '')}
               onClick={() => setActiveCategory('all')}
@@ -44,35 +44,37 @@ function Menu() {
             ))}
           </div>
 
-          {visibleCategories.map(cat => {
-            const items = filteredItems.filter(item => item.category === cat);
-            if (items.length === 0) return null;
-            return (
-              <div key={cat} className="menu-section">
-                <h2>{cat.charAt(0).toUpperCase() + cat.slice(1)}</h2>
-                <div className="menu-items">
-                  {items.map(item => (
-                    <div key={item.id} className="menu-item">
-                      <div className="menu-item-info">
-                        <h4>{item.name}</h4>
-                        <p>{item.description}</p>
+          <div key={activeCategory}>
+            {visibleCategories.map(cat => {
+              const items = filteredItems.filter(item => item.category === cat);
+              if (items.length === 0) return null;
+              return (
+                <div key={cat} className="menu-section">
+                  <h2>{cat.charAt(0).toUpperCase() + cat.slice(1)}</h2>
+                  <div className="menu-items">
+                    {items.map(item => (
+                      <div key={item.id} className="menu-item">
+                        <div className="menu-item-info">
+                          <h4>{item.name}</h4>
+                          <p>{item.description}</p>
+                        </div>
+                        <div className="menu-item-right">
+                          <span className="menu-item-price">{item.price}</span>
+                          <button
+                            className={'heart-btn' + (isFavorite(item.id) ? ' favorited' : '')}
+                            onClick={() => toggleFavorite(item.id)}
+                            aria-label={isFavorite(item.id) ? 'Remove from favorites' : 'Add to favorites'}
+                          >
+                            {isFavorite(item.id) ? '♥' : '♡'}
+                          </button>
+                        </div>
                       </div>
-                      <div className="menu-item-right">
-                        <span className="menu-item-price">{item.price}</span>
-                        <button
-                          className="heart-btn"
-                          onClick={() => toggleFavorite(item.id)}
-                          aria-label={isFavorite(item.id) ? 'Remove from favorites' : 'Add to favorites'}
-                        >
-                          {isFavorite(item.id) ? '♥' : '♡'}
-                        </button>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
     </main>
