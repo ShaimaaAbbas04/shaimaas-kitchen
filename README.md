@@ -52,4 +52,7 @@ src/
 
 ## Screenshots
 
-(coming soon)
+![Home page - light mode](screenshots/home-light.png)
+![Home page - dark mode](screenshots/home-dark.png)
+![Menu page - dark mode](screenshots/menu-dark.png)
+![Reservations page](screenshots/reservations-light.png)
