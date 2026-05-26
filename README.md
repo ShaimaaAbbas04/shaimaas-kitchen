@@ -1,58 +1,33 @@
 # Shaimaa's Kitchen
 
-A responsive restaurant website for a fictional Mediterranean restaurant in West Bekaa, Lebanon. Built for CSCI390 Project Phase 2.
+A restaurant website for a fictional Mediterranean restaurant in West Bekaa, Lebanon. Built for CSCI390 Phase 2.
 
-## Features
+Live site: https://shaimaas-kitchen.vercel.app/
 
-- Browse the full menu organized by category
-- Filter dishes by category (appetizers, pasta, mains, desserts, drinks)
-- Save favorite dishes with a heart icon (saved to your browser)
-- Book a table with name, email, date, time, and party size
-- View and cancel your reservations
-- Pre-fill the reservation form with your favorite dishes
-- Dark mode toggle that saves your preference
+## What it does
 
-## Live Demo
+- Browse the full menu by category
+- Save favorite dishes (stored in your browser)
+- Make a reservation and view or cancel it
+- Dark mode toggle
 
-https://shaimaas-kitchen.vercel.app/
+## How to run it
 
-## Built With
-
-- React (Create React App)
-- React Router
-- Bootstrap 5
-- Custom CSS
-- localStorage for data persistence
-
-## Setup
-
-1. Clone the repository
+1. Clone the repo
 2. Run `npm install`
 3. Run `npm start`
 4. Open http://localhost:3000
 
-## Project Structure
+## Built with
 
-```
-src/
-  components/
-    Header.js
-    Footer.js
-  pages/
-    Home.js
-    Menu.js
-    About.js
-    Reservations.js
-  hooks/
-    useFavorites.js
-    useTheme.js
-  data/
-    menuData.js
-```
+- React
+- React Router
+- Bootstrap
+- Custom CSS
 
 ## Screenshots
 
-![Home page - light mode](screenshots/home-light.png)
-![Home page - dark mode](screenshots/home-dark.png)
-![Menu page - dark mode](screenshots/menu-dark.png)
+![Home page](screenshots/home-light.png)
+![Home page dark mode](screenshots/home-dark.png)
+![Menu page dark mode](screenshots/menu-dark.png)
 ![Reservations page](screenshots/reservations-light.png)
